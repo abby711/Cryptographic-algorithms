@@ -1,0 +1,86 @@
+<html>
+<head>
+    <script>
+        function gcd( x,  y)
+        {
+             
+                while(y) {
+    var t = y;
+    y = x % y;
+    x = t;
+  }
+  return x;
+ 
+            
+ 
+        }
+        function rsa()
+        {
+            var p=document.getElementById('p').value;
+            var q=document.getElementById('q').value;
+            var m=document.getElementById('m').value;
+            var n=p*q;
+            var nn=(p-1)*(q-1);
+            var e;
+            for(i=2;i<nn;i++){
+                
+               if(gcd(i,nn)==1){
+                   e=i;
+                   break;
+               }
+ 
+ 
+            }
+            var d;
+ 
+            for( i=1;i<nn;i++){
+                if ((i*e)%nn==1)
+                {
+                    d=i;
+                    break;
+                }
+            }
+            cipher=Math.pow(m,e).toFixed(0);
+            cipher=cipher%n;
+            var decipher=Math.pow(cipher,d).toFixed(0);
+            decipher=decipher%n;
+            document.getElementById('cipher').innerHTML=cipher;
+            document.getElementById('decipher').innerHTML=decipher;
+            document.getElementById('exponent').innerHTML=e;
+ 
+ 
+ 
+        }
+    </script>
+</head>
+<body>
+    <form action="{{ url_for('addData') }}" method="POST" role="form">
+        <label> Enter p:</label>
+    <input type="number" id="p" name="p">
+    <br><br>
+    <label> Enter q:</label>
+
+    <input type="number" id="q" name="q">
+    <br><br>
+    <label> Enter m:</label>
+
+    <input type="number" id="m">
+    <br><br><br>
+    <button type="submit" onclick="rsa()">RSA</button>
+</form>
+    <p id="publicKey"></p><br>exponent:
+    <p id="exponent"></p><br>
+    <p id="privateKey"></p><br>cipher:
+ 
+ 
+ 
+    <p id="cipher"></p><br>decipher:
+    <p id="decipher"></p><br>
+    <p id=""></p>
+ 
+ 
+</body>
+</html>
+ 
+ 
+ 
