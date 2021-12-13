@@ -1,4 +1,4 @@
-sudo apt install g++  // to install gcc for c++ code
-gedit filename.cpp
-g++ filename.cpp
-./a.out
+sudo apt install g++  // to install gcc for c++ code <br>
+gedit filename.cpp<br>
+g++ filename.cpp<br>
+./a.out<br>
