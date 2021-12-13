@@ -29,8 +29,7 @@ mySecretKeyFactory = SecretKeyFactory.getInstance(myEncryptionScheme);
 cipher = Cipher.getInstance(myEncryptionScheme);
 key = mySecretKeyFactory.generateSecret(myKeySpec);
 }
-public String encrypt(String unencryptedString) {IT8761- Security Lab 2021-2022
-St. Joseph’s College of Engineering
+public String encrypt(String unencryptedString) {
 String encryptedString = null;
 try {
 cipher.init(Cipher.ENCRYPT_MODE, key);
