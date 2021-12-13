@@ -4,14 +4,13 @@
 using namespace std;
 int main() {
     // Write C++ code here
-    char a='A';
-    int x=a;
-    cout<<x;
-    char b=x;
-    cout<<b;
+    
     string key;
     string pt;
+    cout<<"Enter key :";
     cin>>key;
+    cout<<"Enter plain text :";
+
     cin>>pt;
     string cipher="";
     int i=0,j=0;
